@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employees Manager</title>
+</head>
+  <body>
+    <div class="users">
+      <h1>Работа с данными сотрудников</h1>
+      <div class="users__tabPanel">
+        <nav class="users__navigate">
+          <ul>
+            <li class="tab activeTab" id="addTab">
+              Добавление сотрудников
+            </li>
+            <li class="tab" id="searchTab">
+              Поиск сотрудников
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="users__content">
+        <div class="users__tabcontent active" id="addPane">
+          <h2>Добавление сотрудников</h2>
+          <div class="users__form">
+            <div class="users__mobileFirst">
+              Имя:
+              <input class="users__userData userData" id="name" type="text" placeholder="Имя сотрудника" required>
+              Фамилия:
+              <input class="users__userData userData" id="surname" type="text" placeholder="Фамилия сотрудника" required>
+              Дата рождения:
+              <input class="users__userData userData" id="birthDate" type="date" placeholder="Дата рождения сотрудника" required>
+            </div>
+            <div>
+              Руководитель:
+              <select class="users__managerSelect" id="managerSelect"></select>
+              <button class='users__activeButton' id='addUser'>Добавить сотрудника</button>
+            </div>
+            <div class='users__errorMessage' id="addEmployeeFormErrorMessage"></div>
+          </div>
+        </div>
+        <div class="users__tabcontent" id="searchPane">
+          <h2>Поиск сотрудников</h2>
+          <div class="users__form">
+            <form name="searchEmployees" class="users__mobileFirst">
+              Поиск сотрудника:
+              <input class="users__userData" id="nameSearch" placeholder="Имя" size="30" name="name">
+              <input class="users__userData" id="surnameSearch" placeholder="Фамилия" size="30" name="surname">
+              Поиск по менеджеру:
+              <select class="users__managerSelect" id="managerSearch" name="manager"></select>
+          
+              <button class="users__activeButton" type="button" id="searchButton">Найти сотрудников</button>
+              <input class="users__activeButton reset" type="reset" value="Сбросить форму">
+            </form>  
+            <div class="searchInfo">Если не указаны имя и фамилия, то результатом поиска будут все сотрудники</div>
+          </div>
+        </div> 
+        <h2>Список сотрудников</h2>
+        <div id="employeesPlaceholder">
+          <ul class="users__list" id="listUser">
+          </ul>
+        </div>
+      </div>  
+    </div> 
+    <script src="./dist/bundle.js"></script>  
+  </body>
+</html>
